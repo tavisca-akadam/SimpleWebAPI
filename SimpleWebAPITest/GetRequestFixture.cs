@@ -18,14 +18,14 @@ namespace SimpleWebAPITest
         [Fact]
         public void Test_get_valid_message()
         {
-            ActionResult<string> actualResult = messageController.Get("Hello");
-            Assert.Equal("hi", actualResult);
+            ActionResult<string> actualResult = messageController.Get("hello");
+            Assert.Equal("hi", actualResult.Value);
         }
         [Fact]
         public void Test_get_invalid_message()
         {
             ActionResult<string> actualResult = messageController.Get("anil");
-            Assert.Equal("Invalid token", actualResult);
+            Assert.Equal("Invalid token", actualResult.Value);
         }
     }
 }
