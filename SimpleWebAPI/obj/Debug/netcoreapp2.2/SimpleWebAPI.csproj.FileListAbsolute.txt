@@ -11,4 +11,4 @@ C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPI\obj\Debug\netcoreapp2.2\
 C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPI\obj\Debug\netcoreapp2.2\SimpleWebAPI.RazorTargetAssemblyInfo.cache
 C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPI\obj\Debug\netcoreapp2.2\SimpleWebAPI.dll
 C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPI\obj\Debug\netcoreapp2.2\SimpleWebAPI.pdb
-C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPI\obj\Debug\netcoreapp2.2\SimpleWebAPI.csprojResolveAssemblyReference.cache
+C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPI\obj\Debug\netcoreapp2.2\SimpleWebAPI.csprojAssemblyReference.cache
