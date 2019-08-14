@@ -12,6 +12,9 @@ pipeline {
 			string(	name: 'TEST_PROJECT_PATH',
 					defaultValue: "SimpleWebAPITest/SimpleWebAPITest.csproj", 
 					description: '')
+            string( name: 'DEPLOY_PROJECT_PATH',
+                    defaultValue: "SimpleWebAPI/publish/SimpleWebAPI.dll",
+                    description: '')
     }
 	
     stages {
@@ -24,6 +27,12 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'dotnet test ${TEST_PROJECT_PATH}' 
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'dotnet publish ${SOLUTION_FILE_PATH} -o:publish -v:q'
+                sh 'dotnet ${DEPLOY_PROJECT_PATH}'
             }
         }
     }
