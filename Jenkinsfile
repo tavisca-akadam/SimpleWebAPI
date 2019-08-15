@@ -32,7 +32,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh 'dotnet publish ${SOLUTION_FILE_PATH} -o:publish -v:q'
-                sh 'dotnet ${DEPLOY_PROJECT_PATH}'
             }
         }
     }
