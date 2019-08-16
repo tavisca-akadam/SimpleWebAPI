@@ -3,7 +3,6 @@ C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPI\bin\Release\netcoreapp2.
 C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPI\bin\Release\netcoreapp2.2\SimpleWebAPI.runtimeconfig.dev.json
 C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPI\bin\Release\netcoreapp2.2\SimpleWebAPI.dll
 C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPI\bin\Release\netcoreapp2.2\SimpleWebAPI.pdb
-C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPI\obj\Release\netcoreapp2.2\SimpleWebAPI.csprojResolveAssemblyReference.cache
 C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPI\obj\Release\netcoreapp2.2\SimpleWebAPI.csproj.CoreCompileInputs.cache
 C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPI\obj\Release\netcoreapp2.2\SimpleWebAPI.RazorAssemblyInfo.cache
 C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPI\obj\Release\netcoreapp2.2\SimpleWebAPI.RazorAssemblyInfo.cs
@@ -12,3 +11,4 @@ C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPI\obj\Release\netcoreapp2.
 C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPI\obj\Release\netcoreapp2.2\SimpleWebAPI.RazorTargetAssemblyInfo.cache
 C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPI\obj\Release\netcoreapp2.2\SimpleWebAPI.dll
 C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPI\obj\Release\netcoreapp2.2\SimpleWebAPI.pdb
+C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPI\obj\Release\netcoreapp2.2\SimpleWebAPI.csprojAssemblyReference.cache
