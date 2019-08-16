@@ -42,7 +42,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh 'docker build -t ${IMAGE_NAME} -f Dockerfile .'
-                sh 'docker run -rm -p 57801:57801 ${IMAGE_NAME}:latest'
+                sh 'docker run --rm -p 57801:57801 ${IMAGE_NAME}:latest'
             }
         }
     }
