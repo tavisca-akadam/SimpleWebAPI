@@ -70,7 +70,6 @@ pipeline {
                     if(docker inspect -f {{.State.Running}} ${CONTAINER_NAME})
                     then
 
-                            sh 'echo in if'
                             docker container rm -f ${CONTAINER_NAME}
 
                     fi
