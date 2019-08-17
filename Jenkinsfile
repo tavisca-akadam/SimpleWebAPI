@@ -34,7 +34,7 @@ pipeline {
                     description: '')
 
             string( name: 'DOCKER_REPOSITORY',
-                    defaultValue: 'web-api',
+                    defaultValue: 'images',
                     description: '')
             
             string( name: 'DOCKER_HUB_USER',
