@@ -34,7 +34,7 @@ pipeline {
                     description: '')
 
             string( name: 'DOCKER_REPOSITORY',
-                    defaultValue: 'images',
+                    defaultValue: 'web-api',
                     description: '')
             
             string( name: 'DOCKER_HUB_USER',
@@ -76,7 +76,7 @@ pipeline {
                 '''
                 sh 'docker build -t ${IMAGE_NAME} -f Dockerfile .'
                 sh 'docker run --name ${CONTAINER_NAME} -d -p ${HOST_PORT}:${CONTAINER_PORT} ${IMAGE_NAME}:latest'
-                sh 'docker tag ${IMAGE_FILE} ${DOCKER_HUB_USER}/${DOCKER_REPOSITORY}:latest'
+                sh 'docker tag ${IMAGE_NAME} ${DOCKER_HUB_USER}/${DOCKER_REPOSITORY}:latest'
                 sh 'docker login -u ${DOCKER_HUB_USER} -p ${PASSWORD}'
                 sh 'docker push ${DOCKER_HUB_USER}/${DOCKER_REPOSITORY}:latest'
                 sh 'docker image rm -f ${IMAGE_NAME}:latest'
