@@ -8,9 +8,10 @@ C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPITest\bin\Debug\netcoreapp
 C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPITest\bin\Debug\netcoreapp2.2\SimpleWebAPITest.pdb
 C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPITest\bin\Debug\netcoreapp2.2\SimpleWebAPI.dll
 C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPITest\bin\Debug\netcoreapp2.2\SimpleWebAPI.pdb
-C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPITest\obj\Debug\netcoreapp2.2\SimpleWebAPITest.csprojResolveAssemblyReference.cache
 C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPITest\obj\Debug\netcoreapp2.2\SimpleWebAPITest.csproj.CoreCompileInputs.cache
 C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPITest\obj\Debug\netcoreapp2.2\SimpleWebAPITest.AssemblyInfoInputs.cache
 C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPITest\obj\Debug\netcoreapp2.2\SimpleWebAPITest.AssemblyInfo.cs
 C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPITest\obj\Debug\netcoreapp2.2\SimpleWebAPITest.dll
 C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPITest\obj\Debug\netcoreapp2.2\SimpleWebAPITest.pdb
+C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPITest\obj\Debug\netcoreapp2.2\SimpleWebAPITest.csprojAssemblyReference.cache
+C:\Users\ankadam\source\repos\SimpleWebAPI\SimpleWebAPITest\obj\Debug\netcoreapp2.2\SimpleWebAPITest.csproj.CopyComplete
