@@ -61,9 +61,9 @@ pipeline {
         stage('SonarQube') {
             steps {
                 sh 'echo SonarQube Started'
-                bat """dotnet ${Sonarqube-MSBuild} begin /k:"web_api" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="7525dc0078ec1fc74c53024cb327a998eb70c455" """
+                sh 'dotnet ${sonarqube-msbuild-netcoreapp}/SonarScanner.MSBuild.dll begin /k:"web_api" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="7525dc0078ec1fc74c53024cb327a998eb70c455"'
                 sh 'dotnet build  ${SOLUTION_FILE_PATH}'
-                sh 'dotnet ${Sonarqube-MSBuild} end /d:sonar.login="7525dc0078ec1fc74c53024cb327a998eb70c455"'
+                sh 'dotnet ${sonarqube-msbuild-netcoreapp}/SonarScanner.MSBuild.dll end /d:sonar.login="7525dc0078ec1fc74c53024cb327a998eb70c455"'
             }
         }
         stage('Publish') {
