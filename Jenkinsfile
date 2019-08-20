@@ -41,8 +41,8 @@ pipeline {
                     defaultValue: 'anilkadam',
                     description: '')
             
-            string( name: 'PASSWORD',
-                    defaultValue: '**********',
+            string( name: 'TAG_NAME',
+                    defaultValue: 'latest',
                     description: '')
     }
 	
@@ -51,6 +51,11 @@ pipeline {
             steps {
 				sh "dotnet restore ${SOLUTION_FILE_PATH} --source https://api.nuget.org/v3/index.json"
                 sh "dotnet build  ${SOLUTION_FILE_PATH} -p:Configuration=release -v:n"
+                bat """
+                        dotnet ${msbuild}  begin /k:"web_api" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="7525dc0078ec1fc74c53024cb327a998eb70c455"
+                        dotnet  build ${SOLUTION_FILE_PATH}
+                        dotnet ${msbuild} end  /d:sonar.login="7525dc0078ec1fc74c53024cb327a998eb70c455"
+                    """
             }
         }
         stage('Test') {
@@ -58,19 +63,16 @@ pipeline {
                 sh "dotnet test ${TEST_PROJECT_PATH}"
             }
         }
-        stage('SonarQube') {
-            steps {
-                sh 'echo SonarQube Started'
-                bat """
-                        dotnet ${msbuild}  begin /k:"web_api" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="7525dc0078ec1fc74c53024cb327a998eb70c455"
-                        dotnet  build
-                        dotnet ${msbuild} end  /d:sonar.login="7525dc0078ec1fc74c53024cb327a998eb70c455"
-                    """
-            }
-        }
         stage('Publish') {
             steps {
                 sh "dotnet publish ${SOLUTION_FILE_PATH} -o:publish -v:q"
+                sh "docker build -t ${IMAGE_NAME} -f Dockerfile ."
+                sh "docker tag ${IMAGE_NAME} ${DOCKER_HUB_USER}/${DOCKER_REPOSITORY}:${TAG_NAME}"
+                withCredentials([string(credentialsId: 'docker-pwd', variable: 'DockerHubPassword')]) {
+                    sh "docker login -u ${DOCKER_HUB_USER} -p ${DockerHubPassword}"
+                }
+                sh "docker push ${DOCKER_HUB_USER}/${DOCKER_REPOSITORY}:${TAG_NAME}"
+                sh "docker image rm -f ${IMAGE_NAME}:${TAG_NAME}"
             }
         }
         stage('Deploy') {
@@ -84,15 +86,8 @@ pipeline {
 
                     fi
                 '''
-                sh "docker build -t ${IMAGE_NAME} -f Dockerfile ."
-                sh "docker run --name ${CONTAINER_NAME} -d -p ${HOST_PORT}:${CONTAINER_PORT} ${IMAGE_NAME}:latest"
-                sh "docker tag ${IMAGE_NAME} ${DOCKER_HUB_USER}/${DOCKER_REPOSITORY}:latest"
-                withCredentials([string(credentialsId: 'docker-pwd', variable: 'DockerHubPassword')]) {
-                    sh "docker login -u ${DOCKER_HUB_USER} -p ${DockerHubPassword}"
-                }
-                
-                sh "docker push ${DOCKER_HUB_USER}/${DOCKER_REPOSITORY}:latest"
-                sh "docker image rm -f ${IMAGE_NAME}:latest"
+                sh "docker pull ${DOCKER_HUB_USER}/${DOCKER_REPOSITORY}:${TAG_NAME}"
+                sh "docker run --name ${CONTAINER_NAME} -d -p ${HOST_PORT}:${CONTAINER_PORT} ${IMAGE_NAME}:latest" 
             }
         }
     }
