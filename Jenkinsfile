@@ -52,9 +52,9 @@ pipeline {
 				sh "dotnet restore ${SOLUTION_FILE_PATH} --source https://api.nuget.org/v3/index.json"
                 sh "dotnet build  ${SOLUTION_FILE_PATH} -p:Configuration=release -v:n"
                 bat """
-                        dotnet ${msbuild}  begin /k:"web_api" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="7525dc0078ec1fc74c53024cb327a998eb70c455"
+                        dotnet ${msbuild}  begin /k:"web_api" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="${auth_token}"
                         dotnet  build ${SOLUTION_FILE_PATH}
-                        dotnet ${msbuild} end  /d:sonar.login="7525dc0078ec1fc74c53024cb327a998eb70c455"
+                        dotnet ${msbuild} end  /d:sonar.login="${auth_token}"
                     """
             }
         }
