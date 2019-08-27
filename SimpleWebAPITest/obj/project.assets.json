@@ -9569,11 +9569,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ankadam\\source\\repos\\SimpleWebAPI\\SimpleWebAPITest\\SimpleWebAPITest.csproj",
+      "projectUniqueName": "c:\\Users\\ankadam\\source\\repos\\SimpleWebAPI\\SimpleWebAPITest\\SimpleWebAPITest.csproj",
       "projectName": "SimpleWebAPITest",
-      "projectPath": "C:\\Users\\ankadam\\source\\repos\\SimpleWebAPI\\SimpleWebAPITest\\SimpleWebAPITest.csproj",
+      "projectPath": "c:\\Users\\ankadam\\source\\repos\\SimpleWebAPI\\SimpleWebAPITest\\SimpleWebAPITest.csproj",
       "packagesPath": "C:\\Users\\ankadam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ankadam\\source\\repos\\SimpleWebAPI\\SimpleWebAPITest\\obj\\",
+      "outputPath": "c:\\Users\\ankadam\\source\\repos\\SimpleWebAPI\\SimpleWebAPITest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -9592,8 +9592,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\ankadam\\source\\repos\\SimpleWebAPI\\SimpleWebAPI\\SimpleWebAPI.csproj": {
-              "projectPath": "C:\\Users\\ankadam\\source\\repos\\SimpleWebAPI\\SimpleWebAPI\\SimpleWebAPI.csproj"
+            "c:\\Users\\ankadam\\source\\repos\\SimpleWebAPI\\SimpleWebAPI\\SimpleWebAPI.csproj": {
+              "projectPath": "c:\\Users\\ankadam\\source\\repos\\SimpleWebAPI\\SimpleWebAPI\\SimpleWebAPI.csproj"
             }
           }
         }
