@@ -65,7 +65,7 @@ pipeline {
         }
         stage('Publish') {
             steps {
-                sh "dotnet publish ${SOLUTION_FILE_PATH} -o:publish -v:q"
+                sh "dotnet publish ${SOLUTION_FILE_PATH} -c Release -o ../publish"
                 sh "docker build -t ${IMAGE_NAME} -f Dockerfile ."
                 sh "docker tag ${IMAGE_NAME} ${DOCKER_HUB_USER}/${DOCKER_REPOSITORY}:${TAG_NAME}"
                 withCredentials([string(credentialsId: 'docker-pwd', variable: 'DockerHubPassword')]) {
@@ -90,5 +90,10 @@ pipeline {
                 sh "docker run --name ${CONTAINER_NAME} -d -p ${HOST_PORT}:${CONTAINER_PORT} ${DOCKER_HUB_USER}/${DOCKER_REPOSITORY}:${TAG_NAME}" 
             }
         }
+    }
+    post{
+            always{
+                cleanWs()
+            }
     }
 }
