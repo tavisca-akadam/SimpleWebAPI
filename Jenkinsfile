@@ -5,6 +5,10 @@ pipeline {
 					defaultValue: "https://github.com/tavisca-akadam/SimpleWebAPI.git",
 					description: '')
 
+            string(	name: 'SOLUTION_FILE',
+					defaultValue: "SimpleWebAPI", 
+					description: '')
+
 			string(	name: 'SOLUTION_FILE_PATH',
 					defaultValue: "SimpleWebAPI.sln", 
 					description: '')
@@ -66,7 +70,7 @@ pipeline {
         stage('Publish') {
             steps {
                 sh "dotnet publish ${SOLUTION_FILE_PATH} -c Release -o ../publish"
-                sh "docker build -t ${IMAGE_NAME} -f Dockerfile ."
+                sh "docker build  -t ${IMAGE_NAME} --build-arg APPLICATION=${SOLUTION_FILE} ."
                 sh "docker tag ${IMAGE_NAME} ${DOCKER_HUB_USER}/${DOCKER_REPOSITORY}:${TAG_NAME}"
                 withCredentials([string(credentialsId: 'docker-pwd', variable: 'DockerHubPassword')]) {
                     sh "docker login -u ${DOCKER_HUB_USER} -p ${DockerHubPassword}"
