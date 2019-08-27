@@ -91,7 +91,7 @@ pipeline {
                     fi
                 '''
                 sh "docker pull ${DOCKER_HUB_USER}/${DOCKER_REPOSITORY}:${TAG_NAME}"
-                sh "docker run --name ${CONTAINER_NAME} -d -p ${HOST_PORT}:${CONTAINER_PORT} ${DOCKER_HUB_USER}/${DOCKER_REPOSITORY}:${TAG_NAME}" 
+                sh 'docker run --name ${CONTAINER_NAME} -d -e APP_NAME="${SOLUTION_FILE}" -p ${HOST_PORT}:${CONTAINER_PORT} ${DOCKER_HUB_USER}/${DOCKER_REPOSITORY}:${TAG_NAME}'
             }
         }
     }
